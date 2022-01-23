@@ -1169,6 +1169,70 @@ console.log(sum())
 It works when:
 const sum = () => `addition is ${(a=5)+(b=5)}`;
 console.log(sum())
+
+<b>5)Array Destructuring</b>
+
+let arr = ['fareen','ansari',24]
+old way:
+myFirstName = arr[0];
+myLastName = arr[1];
+myAge = arr[2];
+
+using destructuring:
+let [myFirstName, myLastName, myAge] = arr;
+console.log(myAge); 		//24
+
+adding data using array destructuring
+let [myFirstName, myLastName, myAge, myDegree='MCA'] = arr;
+
+<b>5)Object Destructuring</b>
+const myData = {
+	myFirstName : 'Fareen',
+	myLastName : 'Ansari',
+	myAge : 23
+};
+old way:
+let myFirstName = myData.myFirstName;
+let myLastName = myData.myLastName;
+let myAge = myData.myAge;
+console.log(myAge);
+
+using destructuring:
+let {myFirstName, myLastName, myAge, myDegree='MCA'} = myData;
+console.log(myAge);
+console.log(myDegree);
+
+<b>6)Object Properties</b>
+1) using [] for dynamic data
+This is same like dynamic data we passing in angular so that is javascript ES6 property.
+i) we can perform addition and pass dynamic values inside it:
+
+let myName = 'fareen';
+const myData = {
+[myName] : "Hello!!",
+[20+20] : "is my age"
+}
+console.log(myData);
+
+2)if key and value are same then we can write like this, no need to write seperate key.
+let myName = "fareen"
+let myAge = 24
+const myData = {
+myName,
+myAge
+}
+console.log(myData);
+
+O/p:
+{myName: 'fareen', myAge: 24}
+
+<b>7)Spread Operator</b>
+If in case we need entire array we can use spread operator:
+let color = ['red','pink','blue'];
+let newcolor = [...color, 'white','yellow'];
+console.log(newcolor);
+O/p:
+['red', 'pink', 'blue', 'white', 'yellow']
 </pre>
 
 <h1>ECMAScript 2016(ES7)</h1>
