@@ -17,17 +17,17 @@
 
 <li>Introduction of ECMS Script</li>
 
-<li>ECMS SCript 2015()</li>
+<li>ECMS Script 2015(ES6)</li>
 
-<li>ECMS SCript 2016()</li>
+<li>ECMS Script 2016()</li>
 
-<li>ECMS SCript 2017()</li>
+<li>ECMS Script 2017()</li>
 
-<li>ECMS SCript 2018()</li>
+<li>ECMS Script 2018()</li>
 
-<li>ECMS SCript 2019()</li>
+<li>ECMS Script 2019()</li>
 
-<li>ECMS SCript 2020()</li>
+<li>ECMS Script 2020()</li>
 
 [<h2>7. Math Function  </h2>](#seven)
 
