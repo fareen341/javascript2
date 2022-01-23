@@ -6,14 +6,14 @@
 
 [<h2>3. Expressions and Operators</h2>](#three)
 
-[<h2>4.Control Statement & Loop</h2>](#five)
+[<h2>4.Control Statement & Loop</h2>](#four)
 
-[<h2>5. Functions </h2>](#six)
+[<h2>5. Functions </h2>](#five)
 
 
 <h1>Modern Javascript</h1>
 
-[<h2>6. ECMAScript</h2>](#seven)
+[<h2>6. ECMAScript</h2>](#six)
 
 <li>Introduction of ECMS Script</li>
 
@@ -29,21 +29,21 @@
 
 <li>ECMS SCript 2020()</li>
 
-[<h2>7. Math Function  </h2>](#eight)
+[<h2>7. Math Function  </h2>](#seven)
 
-[<h2>8. DOM </h2>](#nine)
+[<h2>8. DOM </h2>](#eight)
 
-[<h2>9. BOM </h2>](#ten)
+[<h2>9. BOM </h2>](#nine)
 
-[<h2>10. Window Object </h2>](#eleven)
+[<h2>10. Window Object </h2>](#ten)
 
-[<h2>11. Event Listener & Onclick </h2>](#twelve)
+[<h2>11. Event Listener & Onclick </h2>](#eleven)
 
 <h1>Advance Javascript</h1>
 
-[<h2>12. Promise </h2>](#thirteen)
+[<h2>12. Promise </h2>](#twelve)
 
-[<h2>13. Async / Await </h2>](#fourteen)
+[<h2>13. Async / Await </h2>](#thirteen)
 
 
 -----------------------------------------------------------------------------------------------------------------------
