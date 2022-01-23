@@ -395,11 +395,575 @@ var num = n.map(n => n * 2).filter(
 	)
 </pre>
 
+<h1>Date</h1>
+<pre>
+4 methods to create date:
+new Date()
+Example:
+let x=new Date()
+----------------------------------------------
+
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+Example: let y=new Date(2021, 1, 07)
+here i)if there is year there month argument is must else it'll print 1/1/1970 
+
+------------------------------------------------
+
+new Date(milliseconds)
+Example:
+let y=new Date(2021, 1, 07)
+
+will return the date time, takes parameter in milliseconds
+--------------------------------------------------
+
+new Date(date string)
+
+
+Date & Time Methods:
+
+</pre>
+
+<h1>Math function</h1>
+<pre>
+1)Math.PI: returns the pi value
+
+2)Math.abc : return absolute value (basically converts negative value into positive).
+
+3)Math.ceil: consides the ceil value if the value is 5.01 then it'll return 6
+Example: will always increment with 1 if decimal comes.
+Math.ceil(5.01) -> 6
+
+4)Math.floor: return floor value
+Example: gives the same value before dot
+Math.floor(5.9) -> 5
+
+5)Math.round: return round value
+Math.round(5.5) -> 6
+
+6)Math.min()
+Math.min(2,36,1,6,30) ->1
+
+7)Math.max()
+
+8)Math.random: return random number which always starts with 0.some value
+Math.random() -> 0.7397596168978735
+
+9)Math.random()*10: to make it return integer value, can return value from 0.some value or integernumber.somevalue
+Math.random()*10 ->  9.6397596168978735
+
+10)To make it only return integer value:
+Math.floor(Math.random()*10) : return random number between 0 & 9
+
+11)Math.trunc : returns the integer part of a number
+Math.trunc(4.6) -> 4
+Math.trunc(-99.6)  -> -99
+</pre>
+
+<h1>DOM</h1>
+<pre>
+<b>Difference between Window and Document</b>
+The tabs and bookmarks and those other section including our website is Window
+and only our website is Document(excluding those tabs, bookmark section etc).
+
+So document is part of windows and document is only used to work with html tags.
+
+For working with html elements we use document, rest for all other stuff history, navigation etc we'll use BOM
+
+Html is the root of document(entire DOM is created using html)
+we can check that using document.documentElement
+and then comes body etc -> see diagram.
 
 
 
+</pre>
+
+DIagram:
+
+<h1>Windows Object</h1>
+<pre>
+Document is part of windows object
+and by default everything is a part of windows so we dont ned to write windows. as in
+innerHeight and window.innerHeight both will return the same output 
+here windows is optional cuz everything is part of windows by deafult.
+
+</pre>
+
+<h1>BOM</h1>
+<pre>
+alert, confirm, prompt
+This are not part of DOM but part of Browser that is why it is BOM
+</pre>
 
 
+<h1>querySelector</h1>
+<pre>
+we can change css style using the querySelector(to select class or id and then change color etc) 
+
+Example:
+document.querySelector('#myclass')
+x.style.color = "red";
+</pre>
+
+<h1>Array Destructuring(ECMA 2015)</h1>
+<pre>
+let arr = ['fareen','ansari',24]
+
+old way:
+myFirstName = arr[0];
+myLastName = arr[1];
+myAge = arr[2];
+
+using destructuring:
+let [myFirstName, myLastName, myAge] = arr;
+console.log(myAge); 		//24
+
+adding data using array destructuring
+let [myFirstName, myLastName, myAge, myDegree='MCA'] = arr;
+
+</pre>
+
+<h1>Object Destructuring</h1>
+<pre>
+const myData = {
+	myFirstName : 'Fareen',
+	myLastName : 'Ansari',
+	myAge : 23
+};
+
+old way:
+let myFirstName = myData.myFirstName;
+let myLastName = myData.myLastName;
+let myAge = myData.myAge;
+console.log(myAge);
+
+using destructuring:
+let {myFirstName, myLastName, myAge, myDegree='MCA'} = myData;
+console.log(myAge);
+console.log(myDegree);
+</pre>
+
+<h1>Object Properties</h1>
+<pre>
+1) using [] for dynamic data
+This is same like dynamic data we passing in angular so that is javascript ES6 property.
+
+i) we can perform addition and pass dynamic values inside it:
+
+let myName = 'fareen';
+const myData = {
+	[myName] : "Hello!!",
+	[20+20] : "is my age"
+}
+console.log(myData);
+
+2)if key and value are same then we can write like this, no need to write seperate key.
+let myName = "fareen"
+let myAge = 24
+const myData = {
+	myName,
+	myAge
+}
+console.log(myData);
+
+O/p:
+{myName: 'fareen', myAge: 24}
+</pre>
+
+<h1>Spread Operator</h1>
+<pre>
+If in case we need entire array we can use spread operator:
+let color = ['red','pink','blue'];
+let newcolor = [...color, 'white','yellow'];
+console.log(newcolor);
+
+O/p:
+['red', 'pink', 'blue', 'white', 'yellow']
+</pre>
+
+<h1>ECMAScript 2016/ES7</h1>
+<pre>
+1)Array.prototype.includes
+2)Exponential Operator
 
 
+1)Array.prototype.includes
+To find the particular data is present or not we can use array include
+let color = ['red','pink','blue'];
+const isPresent = color.includes('pink');
+O/p:
+true
+
+const isPresent = color.includes('cyan');
+O/p:
+false
+
+------------------------------------------------------------------------
+2)Exponential Operator(**)/power
+2**3
+meaning 2 power 3, 2x2x2 = 8
+</pre>
+
+<h1>ECMAScript 2017/ES8</h1>
+<pre>
+1)String padding: to give padding to string
+let myName = "Fareen".padStart(7);	//Fareen contains 6 chars so 6+1 space, so we'll get 1 space in start
+
+let myName = "Fareen".padEnd(7);
+o/p:
+' Fareen'
+
+--------------------------------------------------------------------
+2)Object.entries(): convert each object in seperate array.
+const person = {
+	name:'fareen',
+	age:23
+}
+
+console.log(Object.entries(person));
+
+o/p:
+['name', 'fareen']
+['age', 23]
+
+</pre>
+
+<h1>ECMAScript 2018</h1>
+<pre>
+Introduced spread operator for objects as well
+
+const person = {
+	name: 'fareen',
+	age:24
+}
+
+const addData = { ...person, degree : 'MCA'}
+console.log(addData);
+o/p: {name: 'fareen', age: 24, degree: 'MCA'}
+</pre>
+
+<h1>ECMAScript 2019</h1>
+<pre>
+flat array:
+const arr = ['1','2','3',['4','5'],'6',['7','8','9']];
+console.log(arr.flat());
+
+for 2 level:
+console.log(arr.flat(2));
+
+for 3 level:
+console.log(arr.flat(3));
+
+for infinity
+console.log(arr.flat(Infinity));
+
+o/p:
+['1','2','3','4','5','6','7','8','9'];
+
+----------------------------------------------------------------
+flatMap
+----------------------------------------------------------------
+Object.fromEntries()
+
+const person = {name: 'fareen', age:24};
+const arrObj = Object.entries(person);
+console.log(arrObj);
+o/p:
+[['name','fareen'],['age',24]];
+
+To convert the array back to object
+console.log(Object.fromEntries(arrObj));
+o/p: {name: 'fareen', age: 24}
+-----------------------------------------------------------------
+Object.prototype.{trimStart, trimEnd}: to remove space.
+
+------------------------------------------------------------------
+Symbol.prototype.description
+------------------------------------------------------------------
+JSON.stringify()
+-------------------------------------------------------------------
+Function.prototype.toString()
+</pre>
+
+<h1>ECMAScript 2020</h1>
+<pre>
+1)BigInt:
+
+let oldNum = Number.MAX_SAFE_INTEGER;
+console.log(oldNum + 20);
+
+This 9007199254740991 is javascript safenumber after this javascript cannot handle more number and start giving wrong o/p.
+
+add n:
+const newNum = 9007199254740991n + 12n;
+console.log(newNum);
+console.log(typeof(newNum));
+
+o/p:
+9007199254741003n
+bigint
+</pre>
+
+<h1>ECMAScript 2014</h1>
+<pre>
+Use strict:
+
+without use strict:
+x=3.14
+console.log(x)		//3.14
+
+with use strict:
+"use strict";
+x=3.14
+console.log(x)		//error x is not defined
+
+solving the error:
+let x=3.14;
+</pre>
+
+<h1>Advance Javascript</h1>
+<pre>
+1)Event Propagation: this mode determines in which order the elements receive the event.
+
+<b>Bubbling & Capturing phase</b>
+Bubbling phase: from child to parent 
+Capturing phase: parent to child(parent listner and then child listner called), it is also called trickling.
+
+To stop bubbling we can use 
+event.stopPropagation();
+
+To start capturing we can use 3rd parameter of event listner which is basically boolean value.
+
+<pre>
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div id="parent" style="width:800px; height:500px; background-color:cyan; padding:100px;">
+            
+        <div id="child" style="width:400px; height:400px; background-color:green;">
+            
+        </div>
+    </div>
+
+    <script>
+        const parentId = document.getElementById('parent');
+        const childid = document.getElementById('child');
+
+        const parentCall = () => {
+            alert('parent div is called');
+        }
+
+        const childCall = () => {
+            alert('child div is called');
+            // event.stopPropagation();
+        }
+
+        parentId.addEventListener('click',parentCall,true);
+        childid.addEventListener('click',childCall,true);       
+    </script>
+</body>
+</html>
+</pre>
+
+-------------------------------------------------------------------------
+2)Higher Order Function/Callback Function:
+
+Higher order function: function which taks another function as an argument is called as higher order function.
+
+Callback function: function which get passed as an argument to another function is called as callback function.
+
+
+//callback function all 3
+const add = (a,b) => {
+	return a+b;
+}
+const sub = (a,b) => {
+	return a-b;
+}
+const mult = (a,b) => {
+	return a*b;
+}
+
+const calculator = (num1, num2, operator) => {
+	return operator(num1, num2);
+}
+
+//higher order function
+console.log(calculator(5,2,sub));
+
+</pre>
+
+<h1>Asyncgronour Javascript</h1>
+<pre>
+1)Hoisting in js
+Hoisting moves the variable defined to the top as in:
+
+console.log(myName);
+var myName;
+myName="Fareen"
+
+o/p:
+undefined
+
+Bcoz of hoisting it moves the myName at the top at run time and return the output as undefined.
+In ES2015 This can be avoided by using the let keyword instead of var.
+
+console.log(myName);
+let myName;
+myName="Fareen"
+
+o/p: error
+------------------------------------------------------------------
+2)Scope chain & Lexical Scoping
+
+Scope chain: is used to resolve the value of the variable name in js
+Example:
+var PI = 3.14
+
+//by seeing the PI variable we can say its value.
+
+Lexical scoping:
+inner function can access the parent function but vice versa is not true.
+-------------------------------------------------------------------
+3)Closures in js
+
+inner function can access data of outer/parent function with the help of closure.
+cuz it gets stored in closure.
+-------------------------------------------------------------------
+4)use strict: seen alresy
+-------------------------------------------------------------------
+5)Synchronouse and Asynchronouse js
+Synchronouse:
+agar mere paas 2 kaam h. mera ek kaam finish hone k baad he me dustra kaam karungi.
+1 work: takes 10mins
+2 work: taks 5 sec
+even 2nd work 5 sec le rha h fir bhi me pehle first finish karungi
+and that is Synchronouse js
+
+Example:
+const fun2 = () =>{
+	console.log("Function 2 is called.");
+}
+
+const fun1 = () =>{
+	console.log("Function 1 is called.");
+	fun2();
+	console.log("Function 2 is called again.")
+}
+fun1();
+	
+Asynchronouse:
+1 work: takes 10mins
+2 work: taks 5 sec
+Yaha work one by one hote he rahege, that means 2nd work ho ke finish ho jayega and 1 work bhi chalta rahega. so we dont have to wait. 
+like in youtube we play video comment and like these works are hapenning together with the help of Asynchronouse.
+
+Example:
+const fun2 = () =>{
+	setTimeout(() =>{
+		console.log("Function 2 is called");
+	}, 5000);
+}
+
+const fun1 = () =>{
+	console.log("Function 1 is called.");
+	fun2();
+	console.log("Function 2 is called again.")
+}
+fun1();
+
+o/p:
+Function 1 is called.
+Function 2 is called again.
+Function 2 is called
+
+Here setTimeout is ascynchronous function so it does'nt wait 5 sec and come back in fun1 to run that other console.
+
+-------------------------------------------------------------------
+6)Event loop in js
+
+In js every function get its own execution context.
+
+Example:
+const fun2 = () =>{
+	setTimeout(() =>{
+		console.log("Function 2 is called");
+	}, 5000);
+}
+
+const fun1 = () =>{
+	console.log("Function 1 is called.");
+	fun2();
+	console.log("Function 2 is called again.")
+}
+fun1();
+
+In the above program fun1 get its own execution context
+and console.log get its own execution context, and it runs and its execution context destroyed
+
+setTimeout is a Web API function so when it sees asynchronous function it gets sent to Web API -> from Web API to Message queue
+And event will loop back all the function waiting to msg queue to Global Execution Context -> and then it also runs and stop 
+
+To understand it see javascript video at 13:00:00
+
+------------------------------------------------------------------
+7)Function Currying:
+When a function is calling the other function in other parameter
+as in: sum(8)(3)(4);
+
+Example:
+function sum(num1){
+	return function(num2){
+		return function(num3){
+			console.log(num1+num2+num3);
+		}
+	}
+}
+sum(8)(3)(4);
+
+Rewriting using fat arrow:
+
+const sum = (num1) => (num2) => (num3) => console.log(num1+num2+num3);
+sum(8)(3)(4);
+</pre>
+
+Diagram:
+
+<h3>Difference between json and javascript object</h3>
+<pre>
+in json for key we use double quotes and in js object we don't use double quotes
+
+Example:
+json = {"name":"fareen"}
+object = {name:"fareen"}
+
+<b>To convert js object into json</b>
+var my_obj = {name: "fareen", age: 23};
+var my_json = JSON.stringify(my_obj);
+typeof(my_json);		//string(cuz json store data in string).
+
+<b>To do vice versa</b>
+var my_obj2 = JSON.parse(my_json);
+typeof(my_obj2);	//object
+</pre>
+
+<h1>Promises</h1>
+<pre>
+It returns yes or no(fullfill, reject)
+Either API ks data milega ya to nhi milega 
+90% of time we consume promise.
+fetch() always returns promise.
+To save us from callback hell we use promise.
+</pre>
+
+<h1>Async / Await</h1>
+<pre>
+
+
+using async for fat function 
+            const generateJokes = async () => 
+
+with normal function
+            async function generateJokes() 
+</pre>
 
