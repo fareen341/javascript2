@@ -1881,5 +1881,37 @@ The value of const outside the scope:20
 <a name="fourteen"><h1>14. Events</h1></a><br>
 
 <a name="fifteen"><h1>15. Storage</h1></a><br>
+<pre>
+<b>What are Cookies?</b>
+Cookies are data, stored in small text files, on your computer. When a web server has sent a web page to a browser, the connection is shut down, and the server forgets everything about the user. Cookies were invented to solve the problem "how to remember information about the user": When a user visits a web page, his/her name can be stored in a cookie. Next time the user visits the page, the cookie "remembers" his/her name. Cookies are saved in name-value pairs like:
+
+Cookie
+
+            Creating a cookie:
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            To view cookie:
+                console.log(document.cookie);
+		
+<b>Local Storage</b>
+
+            Local storage are persistance.
+            Creating local storage:
+                localStorage.setItem('name','Bob');
+                console.log(localStorage.getItem('name'));
+            Removing loack storage:
+                localStorage.removeItem('name');
+            To update the local storage use the set item with different name:
+                localStorage.setItem('name','Annu');
+            
+        
+<b>Session Storage</b>
+
+            This is same as local storage:
+            Creating a session storage:
+                sessionStorage.setItem('name','John');
+                console.log(sessionStorage.getItem('name'));
+            Removing the session storage:
+                sessionStorage.removeItem('name')
+</pre>
 
 <a name="sixteen"><h1>16. Class & Objects</h1></a><br>
