@@ -1331,6 +1331,7 @@ o/p: {name: 'fareen', age: 24}
 </pre>
 
 <h1>ECMAScript 2020</h1>
+<pre>
 1)BigInt:
 let oldNum = Number.MAX_SAFE_INTEGER;
 console.log(oldNum + 20);
@@ -1346,11 +1347,6 @@ o/p:
 9007199254741003n
 bigint
 </pre>
-
-
-
-
-
 
 <a name="seven"><h1>7. Math Function</h1></a><br>
 <pre>
@@ -1414,7 +1410,7 @@ document.querySelector('#myclass')
 x.style.color = "red";
 </pre>
 
-DIagram:
+![Screenshot from 2022-01-22 15-49-39](https://user-images.githubusercontent.com/59610617/150681596-d923e1ac-618e-4ed8-80e7-c14cddc0506d.png)
 
 <a name="nine"><h1>9. BOM</h1></a><br>
 <pre>
@@ -1569,7 +1565,7 @@ The window.screen object can be written without the window prefix.
 
 <h1>Advance Javascript</h1>
 <pre>
-1)Event Propagation: this mode determines in which order the elements receive the event.
+<b>1)Event Propagation:</b> this mode determines in which order the elements receive the event.
 
 <b>Bubbling & Capturing phase</b>
 Bubbling phase: from child to parent 
@@ -1581,18 +1577,18 @@ event.stopPropagation();
 To start capturing we can use 3rd parameter of event listner which is basically boolean value.
 
 <pre>
-<!DOCTYPE html>
-<html>
-<body>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
 
-    <div id="parent" style="width:800px; height:500px; background-color:cyan; padding:100px;">
+    &lt;div id="parent" style="width:800px; height:500px; background-color:cyan; padding:100px;"&gt;
             
-        <div id="child" style="width:400px; height:400px; background-color:green;">
+        &lt;div id="child" style="width:400px; height:400px; background-color:green;"&gt;
             
-        </div>
-    </div>
+        &lt;/div&gt;
+    &lt;/div&gt;
 
-    <script>
+    &lt;script&gt;
         const parentId = document.getElementById('parent');
         const childid = document.getElementById('child');
 
@@ -1607,18 +1603,14 @@ To start capturing we can use 3rd parameter of event listner which is basically 
 
         parentId.addEventListener('click',parentCall,true);
         childid.addEventListener('click',childCall,true);       
-    </script>
-</body>
-</html>
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </pre>
 
--------------------------------------------------------------------------
-2)Higher Order Function/Callback Function:
-
+<b>2)Higher Order Function/Callback Function:</b>
 Higher order function: function which taks another function as an argument is called as higher order function.
-
 Callback function: function which get passed as an argument to another function is called as callback function.
-
 
 //callback function all 3
 const add = (a,b) => {
@@ -1637,12 +1629,11 @@ const calculator = (num1, num2, operator) => {
 
 //higher order function
 console.log(calculator(5,2,sub));
-
 </pre>
 
 <h1>Asyncgronour Javascript</h1>
 <pre>
-1)Hoisting in js
+<b>1)Hoisting in js</b>
 Hoisting moves the variable defined to the top as in:
 
 console.log(myName);
@@ -1660,9 +1651,9 @@ let myName;
 myName="Fareen"
 
 o/p: error
-------------------------------------------------------------------
-2)Scope chain & Lexical Scoping
 
+
+<b>2)Scope chain & Lexical Scoping</b>
 Scope chain: is used to resolve the value of the variable name in js
 Example:
 var PI = 3.14
@@ -1671,16 +1662,17 @@ var PI = 3.14
 
 Lexical scoping:
 inner function can access the parent function but vice versa is not true.
--------------------------------------------------------------------
-3)Closures in js
 
+
+<b>3)Closures in js</b>
 inner function can access data of outer/parent function with the help of closure.
 cuz it gets stored in closure.
--------------------------------------------------------------------
-4)use strict: seen alresy
--------------------------------------------------------------------
-5)Synchronouse and Asynchronouse js
-Synchronouse:
+
+<b>4)use strict: seen already</b>
+
+<b>5)Synchronouse and Asynchronouse js</b>
+
+<b>Synchronouse:</b>
 agar mere paas 2 kaam h. mera ek kaam finish hone k baad he me dustra kaam karungi.
 1 work: takes 10mins
 2 work: taks 5 sec
@@ -1699,7 +1691,7 @@ const fun1 = () =>{
 }
 fun1();
 	
-Asynchronouse:
+<b>Asynchronouse:</b>
 1 work: takes 10mins
 2 work: taks 5 sec
 Yaha work one by one hote he rahege, that means 2nd work ho ke finish ho jayega and 1 work bhi chalta rahega. so we dont have to wait. 
@@ -1726,9 +1718,7 @@ Function 2 is called
 
 Here setTimeout is ascynchronous function so it does'nt wait 5 sec and come back in fun1 to run that other console.
 
--------------------------------------------------------------------
-6)Event loop in js
-
+<b>6)Event loop in js</b>
 In js every function get its own execution context.
 
 Example:
@@ -1753,8 +1743,7 @@ And event will loop back all the function waiting to msg queue to Global Executi
 
 To understand it see javascript video at 13:00:00
 
-------------------------------------------------------------------
-7)Function Currying:
+<b>7)Function Currying:</b>
 When a function is calling the other function in other parameter
 as in: sum(8)(3)(4);
 
@@ -1774,7 +1763,9 @@ const sum = (num1) => (num2) => (num3) => console.log(num1+num2+num3);
 sum(8)(3)(4);
 </pre>
 
-Diagram:
+Event Loop:
+
+![Screenshot from 2022-01-23 10-08-18](https://user-images.githubusercontent.com/59610617/150681575-d0f7adc9-b88c-427e-ace0-a62fc5ba211d.png)
 
 <h3>Difference between json and javascript object</h3>
 <pre>
