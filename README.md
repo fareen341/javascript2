@@ -610,6 +610,37 @@ Array Methods:
                 // replaces 1 element at index 4.
                 months.splice(4, 1, 'May');                         //Array ["Jan", "Feb", "March", "April", "May"]
 
+<b>MAP, FILTER, REDUCT</b>
+map: 
+1)does'nt touch the existing function instead it creates new array.
+2)ability to chain other methods:
+Example after using map we can use reduce and filter and other methods with it
+Example:
+var n = [1,2,3,4,5];
+var num = n.map(n => n * 2).filter(
+	num => num % 3==0
+	)
+
+Map: Returns an array.
+    var numbers= [1,2,3,4,5];
+    var doubled  = numbers.map(n => n * 2);
+
+    Output:
+    [2, 4, 6, 8, 10]    
+Filter: filter out the record, returns an array
+    var n = [1,2,3,4,5];
+    var even = numbers.filter(n => n % 2==0);
+
+    Output:
+    [2,4]
+Reduce:
+    var numbers = [1,2,3,4,5];
+    var initialVal = 0;
+    let result=numbers.reduce((x, y) => x + y ,initialVal);
+
+    Output:
+    15
+
 <b>8)Objects</b>
 Mixed Object:
     emp={
@@ -718,9 +749,54 @@ a==b; 		//true(ignore the type)
 a===b; 	//false(check the type also)
 </pre>
 
-<a name="three"><h1>3. Expressions and Operators</h1></a><br>
+<a name="date"><h1>3. Date</h1></a><br>
+<pre>
+4 methods to create date:
 
-<h1></h1>
+<b>1)new Date()</b>
+Example:
+let x=new Date()
+
+<b>2)new Date(year, month, day, hours, minutes, seconds, milliseconds)</b>
+Example: let y=new Date(2021, 1, 07)
+
+here i)if there is year there month argument is must else it'll print 1/1/1970
+
+<b>3)new Date(milliseconds)</b>
+Example:
+let y=new Date(2021, 1, 07)
+will return the date time, takes parameter in milliseconds
+new Date(date string)
+
+<b>4)Date & Time Methods:</b>
+
+
+        Creating date object:
+        d today = new Date()            //Mon Jul 19 2021 10:16:14 GMT+0530 (India Standard Time)
+        let birthday = new Date(1995, 11, 17)           //Sun Dec 17 1995 00:00:00 GMT+0530 (India Standard Time)
+        Here jan starts with 0, feb=1 ...so on
+
+        But if we take hour,minute,seconds then jan=1 feb=2 ...so on:
+        let birthday = new Date('1997,01,07 03:24:00')      //Tue Jan 07 1997 03:24:00 GMT+0530 (India Standard Time)
+        
+        To get month, year, day, minutes etc use:
+        birthday.getFullYear()
+        1997
+        birthday.getMonth()
+        1
+        birthday.getDate()
+        7
+        birthday.getHours()
+        3
+        birthday.getMinutes()
+        24
+        birthday.getSeconds()
+        0
+        birthday.getTime()
+        855266040000
+</pre>
+
+<a name="three"><h1>3. Expressions and Operators</h1></a><br>
 <pre>
 1)Assignment:
 2)Arithmetic
@@ -837,8 +913,8 @@ for(var i=0; i<=10; i++){
 	console.log(i)
 }
 
---------------------------------------------------------------------
-6)For in Loop(in ECMA 2015) : used to iterate the index
+<b>6)For in Loop(in ECMA 2015)</b>
+used to iterate the index
 this is kind of like python for loop:
 
 var ele = [1,2,'fareen',false]
@@ -846,17 +922,15 @@ for(let i in ele){
 	console.log(i);
 }
 
----------------------------------------------------------------------	
-
-7)For of Loop(in ECMA 2015) : used to iterate the values
+<b>7)For of Loop(in ECMA 2015)</b>
+used to iterate the values
 var ele = [1,2,'fareen',false]
 for(let i of ele){
 	console.log(i);
 }
 
---------------------------------------------------------------------
-8)forEach
 
+<b>8)forEach</b>
 i) we cannot use break in this forEach.
 ii) cannot use this when working with forEach.
 
@@ -878,7 +952,8 @@ ele.forEach((element, index, array) => {
 <a name="five"><h1>5. Functions</h1></a><br>
 <pre>
 
-Anonymouse Function: a function with no name
+<b>1)Anonymouse Function</b>
+A function with no name
 var sum = function(a,b){
 	return total=a+b;
 }
@@ -897,7 +972,6 @@ sum(10,20)		//(10,20) is called argument
 
 </pre>
 
------------------------------------------------------------------
 
 <h1>Modern Javascript</h1>
 
@@ -1119,6 +1193,17 @@ For working with html elements we use document, rest for all other stuff history
 Html is the root of document(entire DOM is created using html)
 we can check that using document.documentElement
 and then comes body etc -> see diagram.
+
+1)document.getElementById()
+2)document.getElementsByClassName()
+3)document.getElementByTagName()
+
+<h3>querySelector</h3>
+we can change css style using the querySelector(to select class or id and then change color etc) 
+
+Example:
+document.querySelector('#myclass')
+x.style.color = "red";
 </pre>
 
 DIagram:
@@ -1127,6 +1212,34 @@ DIagram:
 <pre>
 alert, confirm, prompt
 This are not part of DOM but part of Browser that is why it is BOM
+
+JS POPUP ALERT
+
+    1)alert() example:
+    var hello=()=>{
+        alert("This is hello function")
+    }
+
+    <button onclick="hello()">Hello</button>
+
+    2)window.confirm() example:
+    In this we'll get two button alone with the alert OK and CANCEL.
+    Example:
+    var deleteOpt=()=>{
+        window.confirm("Are you sure to delete this record?");
+    }
+
+    <button onclick="deleteOpt()">Delete</button>
+
+    3)prompt() example:
+    To take input:
+    Example:
+    var num=()=>{
+        var x=window.prompt("Enter a number:");
+        document.write("The type of number is:"+typeof(x));
+    }
+
+    <button onclick="num()">Number</button>
 </pre>
 
 <a name="ten"><h1>10. Windows Object</h1></a><br>
@@ -1136,17 +1249,117 @@ and by default everything is a part of windows so we dont ned to write windows. 
 innerHeight and window.innerHeight both will return the same output 
 here windows is optional cuz everything is part of windows by deafult.
 
+The window object is supported by all browsers. It represents the browser's window. All global JavaScript objects, functions, and variables automatically become members of the window object. Global variables are properties of the window object. Global functions are methods of the window object. Even the document object (of the HTML DOM) is a property of the window object.
+Run all commands on browser console window.
+    1)window.innerHeight
+    the inner height of the browser window (in pixels)
+        Example:
+        window.innerHeight;             //150
+
+    2)window.innerWidth;
+    the inner width of the browser window (in pixels)
+        Example:
+        window.innerWidth;              //1536
+
+    3)window.open()
+    open a new window
+        Example: window.open()          //opens a new window , with title=untitled and url=about:blank
+
+    4)window.close()
+    close the current window
+
+    more on doc.
+    
+<b>JS WINDOW LOCATION</b>
+The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
+
+    1)window.location.href 
+    returns the href (URL) of the current page
+    Example:
+        window.location.href;               //"file:///E:/My%20stydy%20website/JavaScript/prac.html"
+
+    2)window.location.hostname 
+    returns the domain name of the web host
+    Example:
+        window.location.hostname;           //"developer.mozilla.org"   (mdn hostname)
+
+    3)window.location.pathname 
+    returns the path and filename of the current page
+    Example:
+        window.location.pathname;           //"/en-US/docs/Web/JavaScript"    (mdn pathname)
+
+    4)window.location.protocol 
+    returns the web protocol used (http: or https:)
+    Example:
+        window.location.protocol;           //"https:"
+
+    5)window.location.assign() 
+    loads a new document
+    Example:
+        window.location.assign("https://www.w3schools.com");            //will open the //www.w3schools.com
+
+<b>JS HISTORY</b>
+The window.history object contains the browsers history.
+    1)window.history.back()         //will go a step back in browser.
+    2)window.history.forward()      //will go a step ahead in browser.
+    
+<b>JS NAVIGATOR</b>
+The window.navigator object contains information about the visitor's browser.
+    1)navigator.appName; 
+    returns the application name of the browser:
+    Example:
+        navigator.appName               //"Netscape"
+    
+    2)navigator.appCodeName             //"Mozilla"
+    
+    3)navigator.cookieEnabled
+    property returns true if cookies are enabled, otherwise false:
+    Example:
+        navigator.cookieEnabled;        //true
+
+    4)navigator.appCodeName             //"Win32"
 </pre>
 
-
-<h1>querySelector</h1>
+<a name="screen"><h1>10. Screen</h1></a><br>
 <pre>
-we can change css style using the querySelector(to select class or id and then change color etc) 
+The window.screen object can be written without the window prefix.
+    1)screen.width
+    returns the width of the visitor's screen in pixels.
+    Example:
+        screen.width;           //1536
 
-Example:
-document.querySelector('#myclass')
-x.style.color = "red";
+    2)screen.height
+    returns the height of the visitor's screen in pixels.
+    Example:
+        screen.height;          //864
+
+    3)screen.availWidth
+    returns the width of the visitor's screen, in pixels, minus interface features like the Windows Taskbar.
+    Example:
+        screen.availWidth;          //1536
+
+    4)screen.availHeight
+    returns the height of the visitor's screen, in pixels, minus interface features like the Windows Taskbar.
+    Example:
+        screen.availHeight;         //824
+
+    5)screen.colorDepth
+    returns the number of bits used to display one color.
+    All modern computers use 24 bit or 32 bit hardware for color resolution:
+    24 bits =      16,777,216 different "True Colors"
+    32 bits = 4,294,967,296 different "Deep Colors"
+    Older computers used 16 bits: 65,536 different "High Colors" resolution.
+    Very old computers, and old cell phones used 8 bits: 256 different "VGA colors".
+    Example:
+        screen.colorDepth;          //24
+
+    6)screen.pixelDepth
+    returns the pixel depth of the screen.
+    Example:
+        screen.pixelDepth;          //24
 </pre>
+
+
 
 <h1>Array Destructuring(ECMA 2015)</h1>
 <pre>
@@ -1614,3 +1827,41 @@ with normal function
             async function generateJokes() 
 </pre>
 
+<h1>VARIABLES,LET AND CONSTANT</h1>
+<pre>
+To store value or user input we use variables
+DECLARING:
+var variable_name = value; //this can be reassign
+const constant_name = value; //value of const won't be change
+    var x=10;
+    document.write(x);
+
+    output:10
+
+    var x=20;
+    document.write(x);
+
+    Output:20       //here the value of x is reassigned.
+
+    for constant:
+    const y=20;
+    document.wtite(y)
+
+    we cannot assign constant like this but var can be:
+    const x;
+    x=20;         //invalid
+
+But we can declare the const again using the block/scope:
+    const x=20;
+    document.write("The value of const outside the scope:",+x)
+    {
+        const x=30;
+        document.write("<br>The value of const inside the scope:",+x)
+    }
+    document.write("<br>The value of const outside the scope:",+x)
+
+Output:
+The value of const outside the scope:20
+The value of const inside the scope:30
+The value of const outside the scope:20
+</pre>
