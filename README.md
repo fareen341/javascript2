@@ -45,6 +45,21 @@
 
 [<h2>13. Async / Await </h2>](#thirteen)
 
+[<h2>14. Events </h2>](#fourteen)
+
+<li>setTimeout</li>
+
+<li>setInterval</li>
+
+[<h2>15. Storage </h2>](#fifteen)
+
+<li>Cookie</li>
+
+<li>Local Storage</li>
+
+<li>Session Storage</li>
+
+[<h2>16. Class & Object </h2>](#sixteen)
 
 -----------------------------------------------------------------------------------------------------------------------
 <a name="one"><h1>1.1 Course Description</h1></a><br>
@@ -985,20 +1000,22 @@ then in 1997: 2 ECMA internationa came
 2018: ES9
 2019: ES10
 2020: ES11
+</pre>
 
-
+<h1>ECMS Script 2015(ES6)</h1>
+<pre>
 ECMA Script 2015 brings:
-LET & CONST
-TEMPLATE STRING
-DEFAULT ARGUMENT
-REST OPERATORS
-DESTRUCTURING
-OBJECT PROPERTIES
-ARROW FUNCTION
-SPREAD OPERTAOR
 
--------------------------------------------------------------------
-LET VS CONST VS VAR(Interview)
+1)LET & CONST
+2)TEMPLATE STRING
+3)DEFAULT ARGUMENT
+4)REST OPERATORS
+5)DESTRUCTURING
+6)OBJECT PROPERTIES
+7)ARROW FUNCTION
+8)SPREAD OPERTAOR
+
+<b>1)LET VS CONST VS VAR(Interview)</b>
 
 var = function scope
 let = block scope
@@ -1046,8 +1063,48 @@ O/p:
 fareen 
 annu
 fareen
---------------------------------------------------------------------
-TEMPLATE STRING
+
+
+VAR,LET AND CONSTANT
+
+To store value or user input we use variables
+DECLARING:
+var variable_name = value; //this can be reassign
+const constant_name = value; //value of const won't be change
+    var x=10;
+    document.write(x);
+
+    output:10
+
+    var x=20;
+    document.write(x);
+
+    Output:20       //here the value of x is reassigned.
+
+    for constant:
+    const y=20;
+    document.wtite(y)
+
+    we cannot assign constant like this but var can be:
+    const x;
+    x=20;         //invalid
+
+But we can declare the const again using the block/scope:
+    const x=20;
+    document.write("The value of const outside the scope:",+x)
+    {
+        const x=30;
+        document.write("<br>The value of const inside the scope:",+x)
+    }
+    document.write("<br>The value of const outside the scope:",+x)
+
+Output:
+The value of const outside the scope:20
+The value of const inside the scope:30
+The value of const outside the scope:20
+
+
+<b>2)TEMPLATE STRING</b>
 
 this is same as f string in python
 to print multiple data we need to use + operator again and again
@@ -1063,8 +1120,8 @@ console.log('My name is:'+ myName + 'age is:' + myAge + 'no. of siblings i have'
 //Better way(template string)
 console.log(`My name is: ${myName} age is ${myAge} no. of siblings i have ${mySibling}`)
 
------------------------------------------------------------------------------
-DEFAULT ARGUMENT
+
+<b>3)DEFAULT ARGUMENT</b>
 
 function mult(a,b=5){
 	return a*b;
@@ -1076,8 +1133,8 @@ if we give something like this function mult(a=5,b)
 so in python above stmt will give default argument follows non default or somethig like this
 but here we'll get NaN cuz a=5 already defined and againg we pass 5 for a value by default it starts giving value from first paramater so default argument should be at last.
 
-------------------------------------------------------------------------
-FAT ARROW FUNCTION
+
+<b>4)FAT ARROW FUNCTION</b>
 =>(is called as fat arrow)
 
 It works when:
@@ -1098,51 +1155,6 @@ const sum = () => `addition is ${(a=5)+(b=5)}`;
 console.log(sum())
 </pre>
 
-<h1>Non-primitive data type(Array)</h1>
-<pre>
-Array and its function
-</pre>
-
-<h1>map, filter, reduce</h1>
-<pre>
-map: 
-1)does'nt touch the existing function instead it creates new array.
-2)ability to chain other methods:
-Example after using map we can use reduce and filter and other methods with it
-Example:
-var n = [1,2,3,4,5];
-var num = n.map(n => n * 2).filter(
-	num => num % 3==0
-	)
-</pre>
-
-<h1>Date</h1>
-<pre>
-4 methods to create date:
-new Date()
-Example:
-let x=new Date()
-----------------------------------------------
-
-new Date(year, month, day, hours, minutes, seconds, milliseconds)
-Example: let y=new Date(2021, 1, 07)
-here i)if there is year there month argument is must else it'll print 1/1/1970 
-
-------------------------------------------------
-
-new Date(milliseconds)
-Example:
-let y=new Date(2021, 1, 07)
-
-will return the date time, takes parameter in milliseconds
---------------------------------------------------
-
-new Date(date string)
-
-
-Date & Time Methods:
-
-</pre>
 
 <a name="seven"><h1>7. Math Function</h1></a><br>
 <pre>
@@ -1865,3 +1877,9 @@ The value of const outside the scope:20
 The value of const inside the scope:30
 The value of const outside the scope:20
 </pre>
+
+<a name="fourteen"><h1>14. Events</h1></a><br>
+
+<a name="fifteen"><h1>15. Storage</h1></a><br>
+
+<a name="sixteen"><h1>16. Class & Objects</h1></a><br>
