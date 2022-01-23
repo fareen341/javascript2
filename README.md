@@ -125,7 +125,9 @@ a==b; 		//true(ignore the type)
 a===b; 	//false(check the type also)
 </pre>
 
-<h1>Expressions and Operators</h1>
+<a name="three"><h1>3. Expressions and Operators</h1></a><br>
+
+<h1></h1>
 <pre>
 1)Assignment:
 2)Arithmetic
@@ -165,7 +167,7 @@ O/p:
 15
 </pre>
 
-<h1>Control Statement & Loop</h1>
+<a name="four"><h1>4. Control Statement & Loop</h1></a><br>
 <pre>
 1)If..Else, If..Else if..ELse
 2)Switch Statemet
@@ -280,7 +282,7 @@ ele.forEach((element, index, array) => {
 });
 </pre>
 
-<h1>Functions</h1>
+<a name="five"><h1>5. Functions</h1></a><br>
 <pre>
 
 Anonymouse Function: a function with no name
@@ -305,7 +307,8 @@ sum(10,20)		//(10,20) is called argument
 -----------------------------------------------------------------
 
 <h1>Modern Javascript</h1>
-<h1>ECMAScript</h1>
+
+<a name="six"><h1>6. ECMAScript</h1></a><br>
 <pre>
 Javascript was first introduced in 1996
 then in 1997: 2 ECMA internationa came
@@ -474,7 +477,7 @@ Date & Time Methods:
 
 </pre>
 
-<h1>Math function</h1>
+<a name="seven"><h1>7. Math Function</h1></a><br>
 <pre>
 1)Math.PI: returns the pi value
 
@@ -510,7 +513,7 @@ Math.trunc(4.6) -> 4
 Math.trunc(-99.6)  -> -99
 </pre>
 
-<h1>DOM</h1>
+<a name="eight"><h1>8. DOM</h1></a><br>
 <pre>
 <b>Difference between Window and Document</b>
 The tabs and bookmarks and those other section including our website is Window
@@ -523,26 +526,23 @@ For working with html elements we use document, rest for all other stuff history
 Html is the root of document(entire DOM is created using html)
 we can check that using document.documentElement
 and then comes body etc -> see diagram.
-
-
-
 </pre>
 
 DIagram:
 
-<h1>Windows Object</h1>
+<a name="nine"><h1>9. BOM</h1></a><br>
+<pre>
+alert, confirm, prompt
+This are not part of DOM but part of Browser that is why it is BOM
+</pre>
+
+<a name="ten"><h1>10. Windows Object</h1></a><br>
 <pre>
 Document is part of windows object
 and by default everything is a part of windows so we dont ned to write windows. as in
 innerHeight and window.innerHeight both will return the same output 
 here windows is optional cuz everything is part of windows by deafult.
 
-</pre>
-
-<h1>BOM</h1>
-<pre>
-alert, confirm, prompt
-This are not part of DOM but part of Browser that is why it is BOM
 </pre>
 
 
@@ -998,7 +998,10 @@ var my_obj2 = JSON.parse(my_json);
 typeof(my_obj2);	//object
 </pre>
 
-<h1>Promises</h1>
+<a name="eleven"><h1>11. Event Listener and Onclick</h1></a><br>
+
+
+<a name="twelve"><h1>12. Promises</h1></a><br>
 <pre>
 It returns yes or no(fullfill, reject)
 Either API ks data milega ya to nhi milega 
@@ -1007,7 +1010,7 @@ fetch() always returns promise.
 To save us from callback hell we use promise.
 </pre>
 
-<h1>Async / Await</h1>
+<a name="thirteen"><h1>13. Async / Await</h1></a><br>
 <pre>
 
 
