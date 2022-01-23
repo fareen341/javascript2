@@ -1002,6 +1002,22 @@ then in 1997: 2 ECMA internationa came
 2020: ES11
 </pre>
 
+<h1>ECMAScript 2014</h1>
+<pre>
+Use strict:
+without use strict:
+x=3.14
+console.log(x)		//3.14
+
+with use strict:
+"use strict";
+x=3.14
+console.log(x)		//error x is not defined
+
+solving the error:
+let x=3.14;
+</pre>
+
 <h1>ECMS Script 2015(ES6)</h1>
 <pre>
 ECMA Script 2015 brings:
@@ -1154,6 +1170,122 @@ It works when:
 const sum = () => `addition is ${(a=5)+(b=5)}`;
 console.log(sum())
 </pre>
+
+<h1>ECMAScript 2016(ES7)</h1>
+<pre>
+1)Array.prototype.includes
+2)Exponential Operator
+
+<b>1)Array.prototype.includes</b>
+To find the particular data is present or not we can use array include
+let color = ['red','pink','blue'];
+const isPresent = color.includes('pink');
+O/p:
+true
+
+const isPresent = color.includes('cyan');
+O/p:
+false
+
+<b>2)Exponential Operator()/power</b>
+23
+meaning 2 power 3, 2x2x2 = 8
+</pre>
+
+
+<h1>ECMAScript 2017(ES8)</h1>
+<pre>
+1)String padding: to give padding to string
+let myName = "Fareen".padStart(7);	//Fareen contains 6 chars so 6+1 space, so we'll get 1 space in start
+let myName = "Fareen".padEnd(7);
+o/p:
+' Fareen'
+
+
+2)Object.entries(): convert each object in seperate array.
+const person = {
+name:'fareen',
+age:23
+}
+console.log(Object.entries(person));
+
+o/p:
+['name', 'fareen']
+['age', 23]
+</pre>
+
+<h1>ECMAScript 2018(ES9)</h1>
+<pre>
+Introduced spread operator for objects as well
+const person = {
+name: 'fareen',
+age:24
+}
+
+const addData = { ...person, degree : 'MCA'}
+console.log(addData);
+o/p: {name: 'fareen', age: 24, degree: 'MCA'}
+</pre>
+
+<h1>ECMAScript 2019</h1>
+<pre>
+<b>1)flat array:</b>
+const arr = ['1','2','3',['4','5'],'6',['7','8','9']];
+console.log(arr.flat());
+for 2 level:
+console.log(arr.flat(2));
+
+for 3 level:
+console.log(arr.flat(3));
+
+for infinity
+console.log(arr.flat(Infinity));
+
+o/p:
+['1','2','3','4','5','6','7','8','9'];
+
+<b>2)flatMap</b>
+
+<b>3)Object.fromEntries()</b>
+const person = {name: 'fareen', age:24};
+const arrObj = Object.entries(person);
+console.log(arrObj);
+o/p:
+[['name','fareen'],['age',24]];
+
+To convert the array back to object
+console.log(Object.fromEntries(arrObj));
+o/p: {name: 'fareen', age: 24}
+
+<b>3)Object.prototype.{trimStart, trimEnd}: to remove space.</b>
+
+<b>4)Symbol.prototype.description</b>
+
+<b>5)JSON.stringify()</b>
+
+<b>6)Function.prototype.toString()</b>
+</pre>
+
+<h1>ECMAScript 2020</h1>
+1)BigInt:
+let oldNum = Number.MAX_SAFE_INTEGER;
+console.log(oldNum + 20);
+
+This 9007199254740991 is javascript safenumber after this javascript cannot handle more number and start giving wrong o/p.
+
+add n:
+const newNum = 9007199254740991n + 12n;
+console.log(newNum);
+console.log(typeof(newNum));
+
+o/p:
+9007199254741003n
+bigint
+</pre>
+
+
+
+
 
 
 <a name="seven"><h1>7. Math Function</h1></a><br>
