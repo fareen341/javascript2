@@ -1,4 +1,54 @@
-<h1>Why javascript</h1>
+<h1>COURSE CONTENT</h1>
+
+[<h2>1. Course Description</h2>](#one)
+
+[<h2>2. Variables & Datatypes(primitive & non-primitive) & Type Casting</h2>](#two)
+
+[<h2>3. Expressions and Operators</h2>](#three)
+
+[<h2>4.Control Statement & Loop</h2>](#five)
+
+[<h2>5. Functions </h2>](#six)
+
+
+<h1>Modern Javascript</h1>
+
+[<h2>6. ECMAScript</h2>](#seven)
+
+<li>Introduction of ECMS Script</li>
+
+<li>ECMS SCript 2015()</li>
+
+<li>ECMS SCript 2016()</li>
+
+<li>ECMS SCript 2017()</li>
+
+<li>ECMS SCript 2018()</li>
+
+<li>ECMS SCript 2019()</li>
+
+<li>ECMS SCript 2020()</li>
+
+[<h2>7. Math Function  </h2>](#eight)
+
+[<h2>8. DOM </h2>](#nine)
+
+[<h2>9. BOM </h2>](#ten)
+
+[<h2>10. Window Object </h2>](#eleven)
+
+[<h2>11. Event Listener & Onclick </h2>](#twelve)
+
+<h1>Advance Javascript</h1>
+
+[<h2>12. Promise </h2>](#thirteen)
+
+[<h2>13. Async / Await </h2>](#fourteen)
+
+
+-----------------------------------------------------------------------------------------------------------------------
+<a name="one"><h1>1.1 Course Description</h1></a><br>
+<h3>Why javascript</h3>
 <p>Javascript improve user experience of the web page by converting it from a static page into an interactive one. OR javascript adds behaviours to the web page</p>
 <b>JavaScript is a dynamically typed language</b>
 <pre>
@@ -7,6 +57,7 @@ It means that JS does not require the explicit declaration of the variables befo
 We can use typeof() to check the types, just like type() function in python.
 </pre>
 
+<a name="two"><h1>2. Variables & Datatypes</h1></a><br>
 <h1>Variables</h1>
 <pre>
 Naming variables: rules and best practices:
