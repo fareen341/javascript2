@@ -71,8 +71,35 @@ Naming variables: rules and best practices:
 6 data types are primitives
 1)undefined
 2)Boolean
-3)Number
-4)String
+
+<b>3)Number</b>
+Methods in NUMBER:
+
+    document.write(Number.MIN_VALUE+"<br>")
+    document.write(Number.MAX_VALUE+"<br>")
+    document.write(Number.NEGATIVE_INFINITY+"<br>")
+    document.write(Number.POSITIVE_INFINITY+"<br>")
+    document.write(Number.prototype+"<br>")
+    document.write(Number.MIN_SAFE_INTEGER+"<br>")
+    document.write(Number.MAX_SAFE_INTEGER+"<br>")
+
+  Output:
+    5e-324
+    1.7976931348623157e+308
+    -Infinity
+    Infinity
+    0
+    -9007199254740991
+    9007199254740991
+    
+<b>4)String</b>
+We can use single, double, or backtick(`) for writing string
+
+RAW STRING:
+This is same as in python 'r' string:
+Example:
+const filePath = `C:\Development\profile\navigation.html`; 
+
 5)BigInt
 6)Symbol
 
