@@ -69,8 +69,15 @@ Naming variables: rules and best practices:
 <h1>Data types</h1>
 <pre>
 6 data types are primitives
-1)undefined
-2)Boolean
+<b>1)undefined</b>
+
+<b>2)Boolean</b>
+Except these(NaN, "", 0, '', undefined, null) all are true. These are called as falsy
+
+To check the booloean value use Boolean function or NOT operator twice
+var x=55;
+y=Boolean(x);   //true
+y=!!x;          //true
 
 <b>3)Number</b>
 Methods in NUMBER:
@@ -100,22 +107,581 @@ This is same as in python 'r' string:
 Example:
 const filePath = `C:\Development\profile\navigation.html`; 
 
-5)BigInt
-6)Symbol
+STRING METHODS:
+        1)concat():
+            A new string containing the combined text of the strings provided.
+            Syntax:
+            concat(str1)
+            concat(str1, str2)
+            concat(str1, str2, ... , strN)
 
-non-primitives(array etc)
+            Example:
+            str1="hello";
+            str2="world";
+            str1.concat(' ',str2);
+            //hello world
+
+        2)charAt():
+            An integer between 0 and str.length - 1. If the index cannot be converted to the integer or no index is provided, the default is 0, so the first character of str is returned.
+            syntax: charAt()
+            Example:str1.charAt(1);     //e
+            if nothing is given inside the charAt first character will returned.
+            if wrong input given empty string will be returned eg. charAt(99)    //""
+
+        3)charCodeAt():
+            returns the character code eg. A has code 65 etc.
+            Example:"Ansari".charCodeAt(0)      //65
+	   
+	4)endswith(), startwith():
+            syntax:
+            endsWith(searchString, length) 
+            startsWith(searchString, position)
+
+            Example:
+            "fareen".endsWith('n',6);       //true
+            "fareen".endsWith('n');         //true
+
+            "fareen".startsWith('f',0);     //true
+
+        5)includes()
+            The includes() method performs a case-sensitive search to determine whether one string may be found within another string, returning true or false as appropriate.
+            Syntax:includes(searchString, position)
+            Example:
+            'fareen ansari'.includes('Fareen')             //false (because it search is case sensitive).
+
+        6)indexOf():
+            this will serach for index from start i.e left.
+            Syntax:indexOf(searchValue, fromIndex)
+            Example:
+
+        7)lastIndexOf():
+            this will search for the index from right. like rfind in python.
+            Syntax:lastIndexOf(searchValue, fromIndex)
+            Example:
+            str = 'To be, or not to be, that is the question.'.lastIndexOf('be')        //17
+
+        8)localeCompare():
+	9)match():
+            The match() method retrieves the result of matching a string against a regular expression.This will return an array output.
+            Syntax:match(regexp)
+            Example:
+            const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+            const regex = /[A-Z]/g;
+            const found = paragraph.match(regex);
+            console.log(found);                             //Array ["T", "I"]
+
+        10)matchAll():
+            
+        11)pasEnd():
+            This will add space in the end of the string or some given chars if provoded , it counts from start of the charachter.The default is space.
+            Synatx:
+            padEnd(targetLength, padString)
+            Example:
+            const str1 = 'Breaded Mushrooms';           //the length of this str is 17, so 8 '-' will be added at the end.
+            str1.padEnd(25,'-');                        //"Breaded Mushrooms--------" 
+            str1.padEnd(25);                            //default is space.
+
+        12)padStart()
+            The padding is applied from the start of the current string.
+            Synatx:padStart(targetLength, padString)
+            Example:
+            str1.padStart(25,'.')                       //"........Breaded Mushrooms"
+
+        13)repeat()
+            Repeats the string.
+            Syntax:repeat(count)
+            Example:
+            'fareen '.repeat(3)                         //"fareen fareen fareen "
+	   
+	14)replace():
+            This will only replace the first match from LTR.
+            The replace() method returns a new string with some or all matches of a pattern replaced by a replacement. 
+            The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced.
+            Synatx:
+            replace(regexp, newSubstr)
+            replace(regexp, replacerFunction)
+
+            replace(substr, newSubstr)
+            replace(substr, replacerFunction)
+            Example:
+            x="Hello fareen";
+            x.replace("Hello","ansari");                //"ansari fareen"
+
+            replace in regex:
+            x="All the time he had, had Had no effect on his work";
+            x.replace('/Had/i','have');                 //"All the time he have, had Had no effect on his work"
+
+        15)replaceAll():
+            Example:
+            x.replaceAll('had','have');                 //"All the time he have, have Had no effect on his work"
+
+        16)search():
+            Returns the index.
+            Syntax:
+            search(regexp
+            Example:
+            x="All the time he have, have Had no effect on his work"
+            x.search('the')                             //4
+
+        17)slice():
+            This will start from the start index and go till lastindex-1.
+            Synatx:
+            slice(beginIndex)
+            slice(beginIndex, endIndex)
+            Example:
+            x="The quick brown fox jumps over the lazy dog."
+            str.slice(4,5)                              //"q"
+            Here it will start with 4 followed by 5-1=4 so 'q' will be printed.
+
+            Example2:
+            str.slice(4,6)                              //"qu"
+	    
+	18)substring():
+            Synatx:
+            substring(indexStart)
+            substring(indexStart, indexEnd)
+            Example:
+            s="Hello world"     
+            s.substr(3);                                //"lo world"
+            s.substr(0,2);                              //"He"
+
+        19)split():
+            Same as split function in python, return an array.
+            Synatx:
+            split()
+            split(separator)
+            split(separator, limit)
+            Example:
+            str.split(' ',10);                          //["The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."]
+
+        20)toLowerCase(), toUpperCaes()
+            Example:
+            "Fareen".toLowerCase();                     //"fareen"
+            "Fareen".toUpperCase();                     //"FAREEN"
+
+        21)toString():
+            Converts into string.
+            Example:
+            x=123;
+            x.toString();                               //"123"
+
+        22)trim():
+            Trim the space on either sides.
+            Syntax:
+            trim()
+            Example:
+            const greeting = '   Hello world!   ';
+            greeting.trim();                            //"Hello world!"
+	    
+	23)trimEnd(), trimStart():
+            Example:
+            greeting.trimEnd();                         // "   Hello world!"
+            greeting.trimStart();                       //"Hello world!   "
+
+<b>5)BigInt</b>
+Covered in ECMA script section
+
+<b>6)Symbol</b>
+Pending
+
+<b>NON_PRIMITVE DATA TYPE:</b>
+<b>7)Array</b>
+    Declaration:
+        var arr=[1,"javascript",false,7.8];
+
+    Accessing using index:
+        arr[1]          //"javascrip"
+
+    Changing the value of array:
+        arr[1]="python";        
+        arr;                    //[1,"python",false,7.8]
+
+    To get the length:
+        arr.length;             //4
+
+    Using for loop in array:
+        x=[1,2,3]
+        for(var i of x){
+            console.log(i);             
+        }
+
+        Output:
+        1
+        2
+        3
+
+ARRAY METHODS:
+Array Methods:
+        1)concat:
+            Syntax:
+                concat(value0, value1, ... , valueN)
+            Example:
+                a=[1,2,3],  b=[4,5],    c=[6]
+                a.concat(b,c);                      //[1,2,3,4,5,6]
+
+        2)copyWithin():
+        The copyWithin() method shallow copies part of an array to another location in the same array and returns it without modifying its length.
+            Synatx:
+                copyWithin(target, start, end)
+
+            Example:
+                // copy to index 0 the element at index 3
+                console.log(array1.copyWithin(0, 3, 4));                //["d", "b", "c", "d", "e"]
+
+                // copy to index 1 all elements from index 3 to the end
+                console.log(array1.copyWithin(1, 3));                   //["d", "d", "e", "d", "e"]
+
+        3)entries():
+        The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+            Syntax:
+                entries()
+            Example:
+                a=['a','b','c'];
+                a.entries().next().value;       //[0,'a'] 
+                a.entries().next().value;       //[1,'b']
+	
+	4)every():
+        The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+            Syntax:
+                every((element) => { ... } )
+                more syntax on doc.
+
+            Example:
+                var arr1=[10,20,30];
+                var x = (val) => val<40;
+                arr1.every(x)                        //true  (cuz every element is less then 40)
+
+                OR
+                arr1.every((val) => val<40)
+
+        5)fill():
+        The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index (default array.length). It returns the modified array.
+            Syntax:
+                fill(value)
+                fill(value, start)
+                fill(value, start, end)
+
+            Example:
+                arr1=[1,2,3,4,5];
+                arr1.fill(0);                  //[0,0,0,0,0]        fill every element with 0.
+                arr1.fill(0,2);                //[1,2,0,0,0]        fill with 0 start from 2  to end.
+                arr1.fill(0,1,3);              //[1,0,0,4,5]        fill with 0 start from 1 to 3-1=2
+
+        6)filter():
+        The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+            Syntax:
+                filter((element) => { ... } )
+                more syntax on doc.
+            Example:
+                x=[1,2,3,4,5];
+                x.filter(x=>x%2==0);            //[2,4]
+	
+	 7)find():
+        The find() method returns the value of the first element in the provided array that satisfies the provided testing function. 
+        If no values satisfy the testing function, undefined is returned.
+            Syntax:
+                find((element) => { ... } )
+                more syntax on doc.
+            Example:
+                x=[1,2,3,4,5];
+                x.find(val => val>3);           //[4] this will return only the next value where as filter will give [4,5].
+
+        8)findIndex():
+        The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. 
+        Otherwise, it returns -1, indicating that no element passed the test.
+            Syntax:
+                findIndex((element) => { ... } )
+            Example:
+                x=[1,2,3,4,5];
+                x.findIndex(val => val>3);          //3,  bcoz 3 is at index of 3.
+            
+        9)flat():
+        The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+            Syntax:
+                flat()
+                flat(depth)
+            Example:
+                arr1 = [0, 1, 2, [3, 4]];
+                arr1.flat();                    //Array[0,1,2,3,4]
+                
+                arr2=[0,1,2,[3,[4,5,[6,7]]]]
+                arr2.flat(1);                   //Array [0, 1, 2, 3, Array [4, 5, Array [6, 7]]]
+                arr2.flat(2);                   //Array [0, 1, 2, 3, 4, 5, Array [6, 7]]
+
+        10)flatMap():
+        The flatMap() method returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. 
+        It is identical to a map() followed by a flat() of depth 1, but slightly more efficient than calling those two methods separately.
+            Syntax:
+                flatMap((currentValue) => { ... } )
+                more syntax on doc.
+            Example:
+                x=[1,2,3,4]
+                x.flatMap(x => [x * 2]);            //[2, 4, 6, 8]
+
+	 11)forEach():
+        The forEach() method executes a provided function once for each array element.
+        Syntax:
+            forEach((element) => { ... } )
+        Example:
+            x=[1,2,3,4];
+            x.forEach(element => console.log(element));
+            
+            Output:
+            1
+            2
+            3
+            4
+
+        12)from():
+        The Array.from() static method creates a new, shallow-copied Array instance from an array-like or iterable object.
+            Syntax:
+                Array.from(arrayLike, (element) => { ... } )
+            Example:
+                z=[1,2,3]
+                Array.from(z, x => x + x);              //[2,4,9]
+
+            
+        13)includes():
+        The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+            Syntax:
+                includes(searchElement)
+                includes(searchElement, fromIndex)
+            Example:
+                x=['a','b','c'];
+                x.includes('a')             //true
+                x.includes('a',1)           //false , cuz we gave start index 1, there is no element 'a' start from index 1.
+
+        14)indexOf():
+        The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+            Syntax:
+                indexOf(searchElement)
+                indexOf(searchElement, fromIndex)
+            Example:
+                x=['a','b','c'];
+                x.indexOf('c');         //2
+                x.indexOf('d');         //-1
+		
+	15)isArray():
+        The Array.isArray() method determines whether the passed value is an Array.
+            Syntax:
+                Array.isArray(value)
+            Example:
+                Array.isArray([1,2,3]);         //true
+            
+        
+        16)join():
+        The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string.
+        If the array has only one item, then that item will be returned without using the separator.
+            Syntax:
+                join()
+                join(separator)
+            Example:
+                x = ['Fire', 'Air', 'Water'];
+                x.join()            //"Fire,Air,Water"
+                x.join('-')         //"Fire-Air-Water"
+
+        17)keys():
+        The keys() method returns a new Array Iterator object that contains the keys for each index in the array.
+            Syntax:
+                keys()
+            Example:
+                x = ['Fire', 'Air', 'Water'];
+                y=x.keys();
+                for (const key of x.keys()) {
+                    console.log(key);
+                }                                          
+
+                Output:
+                0
+                1
+                2
+
+	18)lastIndexOf():
+        It start searching from right.
+            Syntax:
+                lastIndexOf(searchElement)
+                lastIndexOf(searchElement, fromIndex)
+
+            Example:
+                var animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+                animals.lastIndexOf("Dodo");                            //3
+
+        19)map():
+            Syntax:
+            The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+                map((element) => { ... } )
+                more syntax on doc.
+            Example:
+                var array1 = [1, 4, 9, 16];
+                array1.map(x => x+2);               //[3, 6, 11, 18]
+
+        20)pop(),push():
+        The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+        The push() method adds one or more elements to the end of an array and returns the new length of the array. 
+            Syntax:
+                pop()
+
+                push(element0)
+                push(element0, element1)
+                push(element0, element1, ... , elementN)
+
+            Example:
+            pop() example:
+                x=[2,45,6,54,56,3];
+                x.pop();                    //3
+
+            push() example:
+                x=[2,45,6,54,56,3];
+                x.push(3,4,5);                      //9     cuz it returns the last index.       
+                op: x=[2, 45, 6, 54, 56, 3, 3, 4, 5]
+		
+	21)reduce():
+        The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+            Syntax:
+                reduce((accumulator, currentValue) => { ... } )
+                more syntax on doc.
+            Example:
+                x=[1,2,3,4];
+                x.reduce((x,y) => x+y);         //10
+
+        22)reverse():
+        The reverse() method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
+            Syntax:
+                reverse()
+            Example:
+                x=[1,2,3]
+                x.reverse()                 //[3,2,1]
+
+        23)shift():
+        The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.
+            Syntax:
+                shift()
+            Example:
+                x=[1,2,3];
+                x.shift();          //1
+                op: x=[2,3]
+
+        24)slice():
+        The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and 
+        end represent the index of items in that array. The original array will not be modified.
+            Syntax:
+                slice()
+                slice(start)
+                slice(start, end)
+            Example:
+                x=['a','b','c','d','e'];
+                x.slice(2);                 //['c','d','e']     slice start from 2 to end.
+                x.slice(2,4);               //['c','d']         slice start from 2 to 4-1=3.
+                x.slice(-2);                //['c','d']         slice start from -2 to end.
+                x.slice(2,-1);              //['c','d']         slice start from 2 to -1-1=-2
+
+	 25)some():
+        The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, 
+        it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+            Synatx:
+                some((element) => { ... } )
+                more syntax on doc.
+            Example:
+                x=[1,3,4];
+                x.some((val) => val%2==0);             //true cuz atleast one element which divides by 2. 
+                y=[1,3];
+                x.some((val) => val%2==0);             //false
+
+        26)sort():
+        sort in ascending.
+            Syntax:
+            Example:
+                x=['b','a','b','t',' '];
+                x.sort();                    //[" ", "a", "b", "b", "t"]
+
+        27)splice()
+        The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. 
+        To access part of an array without modifying it, see slice().
+            Syntax:
+                splice(start)
+                splice(start, deleteCount)
+                splice(start, deleteCount, item1)
+                splice(start, deleteCount, item1, item2, itemN)
+            Example:
+                inserts at index 1, cuz deleteCount is 0, so no deletion.
+                months = ['Jan', 'March', 'April', 'June'];
+                months.splice(1, 0, 'Feb');                         //Array ["Jan", "Feb", "March", "April", "June"]
+                
+                // replaces 1 element at index 4.
+                months.splice(4, 1, 'May');                         //Array ["Jan", "Feb", "March", "April", "May"]
+
+<b>8)Objects</b>
+Mixed Object:
+    emp={
+        e1:{name:"A",roll:1,marks:[10,20],addr:{loc:"malad",pin:9900}},
+        e2:{name:"B",roll:2,marks:[10,20],addr:{loc:"virar",pin:800}}
+    }	
+    Here name=str, roll=number, marks=array, addr=object:
+    
+    Accessing array:
+    emp.e2.marks[0]         //10
+
+    Accessing object:
+    emp.e2.addr.loc         //virar
+    
+Writing function inside the object:
+        var x={
+        fname:'fareen', 
+        lname:'ansari',
+        rno:1, 
+        age:23,
+        fullname:function(){
+            return "Fullname:"+x.fname+" "+x.lname;
+        }
+    }
+    
+this keyword: this keyword is use to refer object inside it's own body.
+    var x={
+        fname:'fareen', 
+        lname:'ansari',
+        rno:1, 
+        age:23,
+        fullname:function(){
+            return "Fullname:"+this.fname+" "+this.lname;
+        }
+    }
+   
 </pre>
 
 <h1>Type casting</h1>
 <pre>
 1) (+) : end result string
 1+'fareen' = '1fareen'
+
 2) (-) : end result number
 1-'fareen' = NaN
 1-'1' = 0
 
-This will always be false:
-0, "", undefined, null, NaN 
+<b>To convert number into decimal,octal,hexadecimal</b>
+
+Example:var n=17;
+var bin=n.toString(2);    //10001
+var oct=n.toString(8);    //021
+var hex=n.toString(16);   //0x11
+
+We can use parseInt ,parseFloat function.
+parseInt("11",2);     //3
+parseInt("ff",16);    //255
+parseInt("077",10);   //77
+parseFloat("77.9");   //77.9
+parseInt("fareen");   // NaN
+
+
+<b>Converting string into number:</b>
+To convert number to string , two ways:
+
+(1)subtracting 0 with the string
+var a="10"
+var b=a-0;
+Note adding with 0 does not convert it into string rather it will do string concatination.
+
+(2)using Number function:
+Example: var b=Number(a); 
 </pre>
 
 <h3>Null VS Undefined(interview)</h3>
