@@ -1808,45 +1808,6 @@ with normal function
             async function generateJokes() 
 </pre>
 
-<h1>VARIABLES,LET AND CONSTANT</h1>
-<pre>
-To store value or user input we use variables
-DECLARING:
-var variable_name = value; //this can be reassign
-const constant_name = value; //value of const won't be change
-    var x=10;
-    document.write(x);
-
-    output:10
-
-    var x=20;
-    document.write(x);
-
-    Output:20       //here the value of x is reassigned.
-
-    for constant:
-    const y=20;
-    document.wtite(y)
-
-    we cannot assign constant like this but var can be:
-    const x;
-    x=20;         //invalid
-
-But we can declare the const again using the block/scope:
-    const x=20;
-    document.write("The value of const outside the scope:",+x)
-    {
-        const x=30;
-        document.write("<br>The value of const inside the scope:",+x)
-    }
-    document.write("<br>The value of const outside the scope:",+x)
-
-Output:
-The value of const outside the scope:20
-The value of const inside the scope:30
-The value of const outside the scope:20
-</pre>
-
 <a name="fourteen"><h1>14. Events</h1></a><br>
 
 <a name="fifteen"><h1>15. Storage</h1></a><br>
