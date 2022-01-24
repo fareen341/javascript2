@@ -118,7 +118,8 @@ We can use single, double, or backtick(`) for writing string
 RAW STRING:
 This is same as in python 'r' string:
 Example:
-const filePath = `C:\Development\profile\navigation.html`; 
+const filePath = String.raw`C:\Development\profile\navigation.html`;
+console.log(filePath);
 
 STRING METHODS:
         1)concat():
