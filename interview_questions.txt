@@ -1,0 +1,5 @@
+<h2>Undefined VS Null</h2>
+<pre>
+undefined is a type, whereas null an object
+Undefined: variable is defined but value is not given.
+</pre>
