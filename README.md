@@ -1848,6 +1848,41 @@ let jokeBtn = document.getElementById('jokeBtn');
 jokeBtn.addEventListener('click', function clicked(){
     alert("you clicked");
 });
+
+<b>setTimeout</b>
+Allow us to run a function once after the interval of time
+                function greet(name, byetext){
+                    console.log("hello good morning "+name+" "+byetext);
+                }
+                setTimeout(greet,5000,"Harry","take care");
+
+                Output:
+                This function will run after 5 seconds and prints the msg.
+
+                Here x got the unique id which is 1, with the help of this we can clear the timout given.
+                x=setTimeout(greet,5000,"Harry","take care");
+                console.log(x);
+
+                clearTimeout():
+                clearTimeout(x);
+
+                output:
+                this will clear the timeout given.
+        
+<b>setInterval</b>
+Allow us to run function repeatedly after the interval of time
+            function greet(name, byetext){
+                console.log("hello good morning "+name+" "+byetext);
+            }
+            x=setInterval(greet,5000,"Harry","take care");
+
+            Output:
+            This will run repeatedly after every 5 seconds.
+
+            clearInterval(x):
+
+            Output:
+            this will clear the interval given and will not print any value. 
 </pre>
 
 <a name="fifteen"><h1>15. Storage</h1></a><br>
