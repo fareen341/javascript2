@@ -1810,6 +1810,51 @@ with normal function
 
 <a name="fourteen"><h1>14. Events</h1></a><br>
 
+<pre>
+<b>Browser Events</b>
+<b>mouse events (MouseEvent):</b> mousedown, mouseup, click, dblclick, mousemove, mouseover, mousewheel, mouseout, contextmenu
+touch events (TouchEvent): touchstart, touchmove, touchend, touchcancel
+
+<b>keyboard events (KeyboardEvent):</b> keydown, keypress, keyup
+
+<b>form events:</b> focus, blur, change, submit, onchange
+
+<b>window events:</b> scroll, resize, hashchange, load, unload
+
+Full List of Events: https://developer.mozilla.org/en-US/docs/Web/Events
+
+Touch events are only triggered on touch-enabled devices like smartphones and touch-screen laptops. Mouse events like click and mousemove are triggered on the majority of browsers and devices.
+However, in most smartphones, the mouseover event isn't triggered at all, because they can't detect a finger hovering over the phone.
+Some smartphones are adding sensors for that though, so more smartphones will detect mouseover in the future.
+In most cases, you'll want to listen to mouse events instead of touch events, because those are the most universal.
+
+Two ways to add event listener:
+1)using normal function
+&lt;button id="jokeBtn" onclick="clicked()"&gt;Next&lt;/button&gt;
+
+function clicked(){
+    alert("you clicked");
+};
+
+2)using eventlistener
+&lt;button id="jokeBtn"&gt;Next&lt;/button&gt;
+
+
+function clicked(){
+    alert("you clicked");
+};
+
+let jokeBtn = document.getElementById('jokeBtn');
+jokeBtn.addEventListener('click', clicked);
+
+OR
+
+let jokeBtn = document.getElementById('jokeBtn');
+jokeBtn.addEventListener('click', function clicked(){
+    alert("you clicked");
+});
+</pre>
+
 <a name="fifteen"><h1>15. Storage</h1></a><br>
 <pre>
 <b>What are Cookies?</b>
