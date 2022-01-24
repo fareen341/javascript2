@@ -1824,14 +1824,14 @@ Some smartphones are adding sensors for that though, so more smartphones will de
 In most cases, you'll want to listen to mouse events instead of touch events, because those are the most universal.
 
 Two ways to add event listener:
-1)using normal function
+<b>1)onclick</b>
 &lt;button id="jokeBtn" onclick="clicked()"&gt;Next&lt;/button&gt;
 
 function clicked(){
     alert("you clicked");
 };
 
-2)using eventlistener
+<b>2)using eventlistener</b>
 &lt;button id="jokeBtn"&gt;Next&lt;/button&gt;
 
 
