@@ -37,15 +37,13 @@
 
 [<h2>10. Window Object </h2>](#ten)
 
-[<h2>11. Event Listener & Onclick </h2>](#eleven)
-
 <h1>Advance Javascript</h1>
 
 [<h2>12. Promise </h2>](#twelve)
 
 [<h2>13. Async / Await </h2>](#thirteen)
 
-[<h2>14. Events </h2>](#fourteen)
+[<h2>14. Event Listener & Onclick </h2>](#fourteen)
 
 <li>setTimeout</li>
 
@@ -1784,9 +1782,6 @@ typeof(my_json);		//string(cuz json store data in string).
 var my_obj2 = JSON.parse(my_json);
 typeof(my_obj2);	//object
 </pre>
-
-<a name="eleven"><h1>11. Event Listener and Onclick</h1></a><br>
-
 
 <a name="twelve"><h1>12. Promises</h1></a><br>
 <pre>
