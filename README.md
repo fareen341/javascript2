@@ -1802,12 +1802,34 @@ Either API ks data milega ya to nhi milega
 90% of time we consume promise.
 fetch() always returns promise.
 To save us from callback hell we use promise.
+
+then is called when promise resolved.
+catch is called when promised is rejected/failed.
+
+Example: 
+ let p = new Promise((resolve, reject) =>{
+     let a=1+3
+     if(a==2){
+         resolve('success')
+     }else{
+         reject('failed')
+     }
+ })
+
+ p.then((message)=>{
+     console.log('This is then'+message)
+ }).catch((message)=>{
+     console.log('This is catch'+message)
+ })
+
 </pre>
 
 <a name="thirteen"><h1>13. Async / Await</h1></a><br>
 <pre>
 
-
+async: always returns promise
+await: it is asynchronous js 
+ 
 using async for fat function 
             const generateJokes = async () => 
 
