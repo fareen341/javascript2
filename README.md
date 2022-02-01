@@ -1407,6 +1407,17 @@ we can change css style using the querySelector(to select class or id and then c
 Example:
 document.querySelector('#myclass')
 x.style.color = "red";
+
+1)querySelector: it'll return the first match
+2)querySelectorAll: returns NodeList of all the matched 
+    
+let x=document.querySelector('.para');
+console.log(x);
+x.innerHTML="hello";
+
+let x=document.querySelectorAll('.para')
+console.log(x);
+x[0].innerHTML="hello";
 </pre>
 
 ![Screenshot from 2022-01-22 15-49-39](https://user-images.githubusercontent.com/59610617/150681596-d923e1ac-618e-4ed8-80e7-c14cddc0506d.png)
@@ -1850,6 +1861,118 @@ jokeBtn.addEventListener('click', function clicked(){
     alert("you clicked");
 });
 
+Note: if we do addEventListener then we don't have to write on as in onclick
+but if we're using it with html tag then we've to write on as in onclick.
+1)Method 1:
+using html to give inline onclick
+&lt;button onClick="clickevent()"&gt; &lt;/button&gt;
+
+2)Method 2:
+document.querySelector('#para').onclick=functionName;
+Example:
+
+let myfunc = () => {
+    alert("you clicked para")
+}
+
+document.querySelector('.para').onclick=myfunc;
+
+OR
+using anonymous function:
+document.querySelector('.para').onclick=function(){
+    alert("you clicked para23");
+};
+
+3)Method 3:
+document.querySelector('#para').addEventListener('click',functionName);
+Example:
+
+let myfunc = () => {
+    alert("you clicked para")
+}
+
+document.querySelector('.para').addEventListener('click',myfunc);
+
+OR
+let x = document.querySelector('.para');
+document.querySelector('.para').addEventListener('click',function(){
+    x.style.color="red";
+});
+
+we can take this, cuz it referes the same instance instead of taking value in x
+document.querySelector('.para').addEventListener('click',function(){
+    this.style.color="green";
+});
+
+<b>Custom event listener</b>
+let x=document.querySelector('#para')
+x.addEventListener('numberChanged',function(e){
+    x.textContent = e.detail.number;
+    x.style.color = e.detail.textColor;
+});
+
+function changeNumber(n,c){
+    const event = new CustomEvent('numberChanged',{
+        detail:{
+            number:n,
+            textColor:c
+        }
+    });
+    x.dispatchEvent(event);
+}
+
+//calling
+changeNumber(33,'red')
+
+Now para text will changed to 33, red color
+
+Mouse event:
+Please note: such events may come not only from “mouse devices”, but are also from other devices, such as phones and tablets,
+ where they are emulated for compatibility.
+
+1)mouseenter and mouseleave
+document.querySelector('#para').addEventListener('mouseenter',function(){
+    this.style.backgroundColor="red";
+});
+
+document.querySelector('#para').addEventListener('mouseleave',function(){
+    this.style.backgroundColor="cyan";
+});
+
+2)mouseover & mouseout: when mouse move on element, or onto one of its children
+document.querySelector('#para').addEventListener('mouseover',function(){
+    this.style.backgroundColor="red";
+});
+
+document.querySelector('#para').addEventListener('mouseout',function(){
+    this.style.backgroundColor="cyan";
+});
+
+
+<b>From events</b>
+1)focus
+example:
+document.querySelector('#txt').addEventListener('focus',function(){
+    this.style.backgroundColor="green";
+});
+
+2)blur
+this is opposite of focus, when we click inside the text box and then click
+outside blur gets called
+Example:
+document.querySelector('#txt').addEventListener('blur',function(){
+    this.style.backgroundColor="green";
+});
+
+3)change: useful for dropdown values
+Example
+document.querySelector('#cng').addEventListener('change',function(){
+    alert("value changed")
+});
+
+4)submit
+useful when submitting data to server
+
 <b>setTimeout</b>
 Allow us to run a function once after the interval of time
                 function greet(name, byetext){
@@ -1897,7 +2020,22 @@ Cookie
                 document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             To view cookie:
                 console.log(document.cookie);
-		
+	
+
+<b>CRUD using cookie</b>
+1)Creating a cookie
+document.cookie = "username=John Doe; expires=Thu, 24 Jan 2023 12:00:00 UTC";
+
+2)Read 
+console.log(document.cookie)
+
+3)Update: You can change a javaScript Cookie the same way as you create it.
+document.cookie = "username=Fareen; expires=Thu, 24 Jan 2023 12:00:00 UTC";
+
+4)Delete
+If you want to delete a cookie. Set Cookies expiry date from the past.
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
 <b>Local Storage</b>
 
             Local storage are persistance.
@@ -1908,7 +2046,52 @@ Cookie
                 localStorage.removeItem('name');
             To update the local storage use the set item with different name:
                 localStorage.setItem('name','Annu');
-            
+ 
+ 
+<b>CRUD using local storage</b>
+1)setItem()
+localStorage.setItem('name', 'Sarah');
+
+2)getItem()
+const name = localStorage.getItem('name');
+console.log(name) 
+
+3)removeItem()
+localStorage.removeItem('name')
+console.log(localStorage.getItem('name'))       //null
+
+4)clear(): The clear() method clears the entire local storage of all data stored in it. It does not receive any argument.
+localStorage.clear()
+
+Important points about local storage:
+1)The local storage is limited to 5MB across all major browsers.
+2)It can easily be accessed from the browser so it should not be used to store any sensitive data or user information.
+3)Operations on the local storage are synchronous. Therefore, they are executed one after another.
+
+
+Storing array pf objects in local storage:
+
+const notes = [
+    {  
+        title: 'A note',
+        text: 'First Note'
+    },
+    {
+        title: 'Another note',
+        text: 'Second Note'
+    }
+]
+
+We need to convert the arrays or objects to strings before passing it to the local storage.
+We can use the JSON.stringify() method to convert an object or array to strings before passing it the setItem() method.
+
+localStorage.setItem('notes', JSON.stringify(notes))
+
+To get our value as array, we need to parse it. Otherwise, it returns strings.
+var x=JSON.parse(localStorage.getItem('notes'))
+console.log(x)
+
+
         
 <b>Session Storage</b>
 
@@ -1918,6 +2101,46 @@ Cookie
                 console.log(sessionStorage.getItem('name'));
             Removing the session storage:
                 sessionStorage.removeItem('name')
+		
+
+<b>Session storage</b>
+1)setItem()
+sessionStorage.setItem("name", "fareen");
+
+2)getItem()
+var name = sessionStorage.getItem("name");
+
+3)removeItem()
+sessionStorage.removeItem("name");
+
+4)clear()
+sessionStorage.clear();
+
+5)key(): The key() method comes in handy in situations where you need to loop through keys and allows you pass a number or 
+index to local storage to retrieve the name of the key.
+var KeyName = sessionStorage.key(index);
+
 </pre>
 
 <a name="sixteen"><h1>16. Class & Objects</h1></a><br>
+
+<h1>Try Catch, Throw</h1>
+<pre>
+try{
+    console.log(x)
+}catch(error){
+    console.log(error.message)
+}finally{
+    console.log('this will always run')
+}
+
+<b>throw error</b>
+let num=prompt("Enter number:")
+try{
+    if(isNaN(num)){
+        throw new Error("Invalid value!");
+    }
+}catch(error){
+    console.log(error.message)
+}
+</pre>
