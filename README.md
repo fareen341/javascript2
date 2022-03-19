@@ -1288,6 +1288,12 @@ age:24
 const addData = { ...person, degree : 'MCA'}
 console.log(addData);
 o/p: {name: 'fareen', age: 24, degree: 'MCA'}
+
+
+//To overritw the current value
+const addData = { ...person, name : 'annu'}
+console.log(addData);
+o/p: {name: 'annu', age: 24}
 </pre>
 
 <h1>ECMAScript 2019</h1>
