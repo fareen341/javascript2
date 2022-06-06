@@ -1410,6 +1410,8 @@ and then comes body etc -> see diagram.
 2)document.getElementsByClassName()
 3)document.getElementByTagName()
 
+When JavaScript is executed inside the browser, the window object is the JavaScript Global object. The document object is a property of the window object. The window object represents the browser window. The document object represents the HTML document loaded in that window.
+
 <h3>querySelector</h3>
 we can change css style using the querySelector(to select class or id and then change color etc) 
 
