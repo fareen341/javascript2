@@ -407,7 +407,7 @@ Array Methods:
                 findIndex((element) => { ... } )
             Example:
                 x=[1,2,3,4,5];
-                x.findIndex(val => val>3);          //3,  bcoz 3 is at index of 3.
+                x.findIndex(val => val>3);          //3,  bcoz 4 is at index of 3.
             
         9)flat():
         The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
