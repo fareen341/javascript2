@@ -1008,10 +1008,13 @@ without use strict:
 x=3.14
 console.log(x)		//3.14
 
+
+Don't test with variable x cuz we declare it already in above program so use p variable instead
+
 with use strict:
 "use strict";
-x=3.14
-console.log(x)		//error x is not defined
+p=3.14
+console.log(p)		//error x is not defined
 
 solving the error:
 let x=3.14;
