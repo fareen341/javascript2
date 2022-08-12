@@ -2177,3 +2177,297 @@ try{
     console.log(error.message)
 }
 </pre>
+
+<h3>Extra</h3>
+<pre>
+Bootstrap:
+
+col-sm-3 
+meaning from sm device till the given device as in md, lg. so no device is given so it'll follow the same 3 col for every device
+
+if we give 
+col-sm-3 col-md-2
+so from sm it'll be 3, for md to end i.e xxl it'll be 2 rows only
+
+If we don't mention for any previous device as in we give for md but not for sm and xs so it'll follow whole width i.e 100%
+Example: col-md-4
+for all previous device as in sm, xs it'll be 100% i.e col-12
+
+If we want to give default value in the above case:
+Example: col-2 col-md-4
+so now it'll be 4 cols from md to end and 2 for before md device i.e sm and xs
+
+================================================================================================
+
+Javascript:
+js is dynamically typed language just like python 
+To check events in js type 'on' you'll see all event on console
+
+Higher order and callback function:
+function fun1(){
+	console.log("fun1 is called");
+}
+
+#parseInt() vs Number()
+Number checks all the input value, parseInt just checks the number and ignores the string value
+Example:
+var n1="123msk"
+
+We cannot return multiple values in one function in js using comma instead we can use object or array
+Example:
+function sim(){
+    x=10;
+    y=20;
+    return x,y;
+}
+
+//calling:
+sim()
+o/p: 20	//will return the last value
+
+instead call it like, return [x,y];
+o/p:
+[10, 20]
+
+
+Number(n1)
+o/p: NaN
+
+parseInt(n1)
+o/p: 123
+
+# it'll only accept function as a parameter, other values will give:- a is not a function error
+function fun2(a){
+	a()
+}
+
+# calling
+fun2(fun1);
+
+1)fun2 only accept function as a parameter.
+2)fun2 is called higher order function & fun1 is called callback function.
+
+Example 2:
+function f1(a,b){
+	a('fareen');
+	b();
+}
+
+f1(	
+	//anonymous call for function a
+	function(data){
+		console.log(data);
+	},
+	
+	//anonymous call for function b
+	function(){
+		console.log("function b is called")
+	}
+)
+
+
+All anonymous function is a callback, direct call is not possible
+
+Why return stmt?
+if we need the value of a function in a variable, and that var is going to be used many times, then its not possible without return stmt
+
+Example:
+//withput return
+function add1(){
+	console.log("hey");
+}
+
+//calling
+result=add1()
+
+o/p: hey
+calling result variable will give undefined
+
+//with return
+function add2(){
+	return ("hey");
+}
+
+//calling
+result=add1()
+
+calling result variable will give hey
+
+------------------
+1)To compile jsx we need babel(its a library) browser don't know compile. JSX is combination of HTML, JS & XML.
+2)function App(params){
+
+	<>
+		<p>My name is {params.name}</p>
+	</>
+}
+
+Here params accept key value pairs thats is why we access them as params.name
+
+3 library needed for react app are: react, babel, reactDom
+A component should:
+i)be in element
+ii)should starts with capital letter
+iii)Example: <App></App>
+
+
+Json:
+1)To insert data in already created object
+obj={}
+obj.num = 101
+
+if num exists then update its value else insert.
+
+2)To insert data like full name="Fareen ANsari"
+obj['full name'] = "Fareen Ansari"
+
+To delete object
+obj={loc:"Mumbai"}
+
+delete obj.loc
+o/p: true
+
+To access keys using loop then dont use dot use [].
+as in: obj.k
+obj[k]
+
+Passing dynamic values:
+1)As parameters 
+<App name="Fareen" />
+
+//accessing
+function App(a){
+	a.name
+}
+
+
+2)As Child
+<App>
+Fareen
+</App>
+
+//accessing
+function App(a){
+	a.children
+}
+
+i)We can pass many props: example: <Player name="Fareen" loc="Mumbai" />
+
+
+Events:
+1)onClick
+i)It should accept method not method call 
+Example:
+it should be onClick={findSum}
+and not onClick={findSum()}	//this will call right after browser page refresh not on onclick.
+
+
+
+Before 16.8 version functional component were only used for static content and class for both dynamic as well as static. But after 16.8 they introduce hooks so that a function component can be used for both dynamic as well as static components.
+Whatever we can do with class components we can do with functions as well using hooks. Hooks are only for functional components.
+
+
+Appling style:
+1)using style attribute
+2)using class
+
+1)using style attribute
+&lt;p style={{color:"red"}}&gt;{initialVal}&lt;/p&gt;
+
+Two ways to create class in js using 
+1)function 
+2)class
+
+Example:
+class Bus{
+	fw=2;
+	bw=4;
+	var x;
+	totalWheels(){
+		console.log("function called",this.fw));
+	}
+}
+
+Inheritance using PROTOTYPE: can be use in both class and functional
+to get value for x we can use inheritance 
+Bus.prototype.x=2;
+
+var obj=new Bus()
+obj.getColor(); 	//undefined
+
+obj.prototype.getColor = function(){
+	console.log("red");
+}
+
+obj.getColor(); 	//red
+
+
+Using EXTENDS for inheritance(extends keyword can only be used by class) it can extends both class and functional class
+
+Example:
+function A(){
+	this.fw=8;
+}
+
+class B extends A{
+	bw=4;
+	totWheels(){
+		console.log(this.fw + this.fw);
+	}
+}
+
+
+
+
+
+function Bus(){
+	this.fw=2;
+	this.bw=4;
+	this.totalWheels=function(){
+		console.log("function called",this.fw);
+	}
+}
+
+inside the class if we want to access values we can call using this in both class and functional class.
+
+//calling
+var obj=new Bus() 	//will return an object
+
+obj.fw;
+o/p: 2
+
+obj.totalWheels()
+o/p: function called
+
+
+#Constructor:
+1)Whenever object is created constructor is execute.
+2)In functional class A is the constructor and class also
+function A(){
+	this.n1=10;
+	this.n2=20;
+}
+3)In class constructor:
+class A{
+	fw=10;
+	bw=20;
+	constructor(){
+	}
+}
+4)Constructor allocate memory for variables and perform initialization when we create object
+
+
+Class based component:
+1)syntax:
+class App extends React.Component{
+	render(){
+		var cont=<h1>Hello</h1>
+		return cont;
+	}
+}
+2)It should inherited from React.Component.
+3)To prepare content it should call instance.render function.
+
+
+We can call a function using fun.call(), fun.apply(), fun.bind()
+</pre>
